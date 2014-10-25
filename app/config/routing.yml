@@ -3,9 +3,9 @@ rest_full_rest_full:
     type:     annotation
     prefix:   /
 
-#root:
-#    pattern: /
-#    defaults:
-#        _controller: AppFrontBundle:Default:index
-#        path: /
-#        permanent: true
+root:
+    pattern: /
+    defaults:
+        _controller: AppFrontBundle:Default:index
+        path: /
+        permanent: true
