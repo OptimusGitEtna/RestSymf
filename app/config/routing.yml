@@ -6,6 +6,6 @@ rest_full_rest_full:
 root:
     pattern: /
     defaults:
-        _controller: AppFrontBundle:Default:index
+        _controller: RestFullRestFullBundle:User:home
         path: /
         permanent: true

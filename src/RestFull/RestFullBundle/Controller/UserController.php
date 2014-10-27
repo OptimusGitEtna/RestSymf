@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use RestFull\RestFullBundle\Entity\User;
 use RestFull\RestFullBundle\Form\UserType;
+use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -23,7 +24,7 @@ class UserController extends Controller
     /**
      * Lists all User entities.
      *
-     * @Route("/", name="user")
+     * @Route("/list", name="user")
      * @Method("GET")
      * @Template()
      */
@@ -36,6 +37,19 @@ class UserController extends Controller
             'entities' => $entities,
         );
     }
+
+    /**
+     * return a status 200.
+     *
+     * @Route("/", name="home")
+     * @Method("GET")
+     */
+    public function homeAction()
+    {
+        $response = new Response('Content', 200, array('content-type' => 'text/html'));
+        return $response;
+    }
+
     /**
      * Creates a new User entity.
      *
@@ -195,8 +209,8 @@ class UserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $em->flush();
 
+            $em->flush();
             return $this->redirect($this->generateUrl('user_edit', array('id' => $id)));
         }
 
