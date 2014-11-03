@@ -46,7 +46,7 @@ class UserController extends Controller
      */
     public function homeAction()
     {
-        $response = new Response('Content', 200, array('content-type' => 'text/html'));
+        $response = new Response('Content home', 200, array('content-type' => 'text/html'));
         return $response;
     }
 
