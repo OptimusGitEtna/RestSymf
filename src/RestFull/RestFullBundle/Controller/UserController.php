@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 /**
  * User controller.
  *
- * @Route("/user")
+ * @Route("/")
  */
 class UserController extends Controller
 {
@@ -24,7 +24,7 @@ class UserController extends Controller
     /**
      * Lists all User entities.
      *
-     * @Route("/list", name="user")
+     * @Route("/user/list", name="user")
      * @Method("GET")
      * @Template()
      */
@@ -41,7 +41,7 @@ class UserController extends Controller
     /**
      * return a status 200.
      *
-     * @Route("/", name="home")
+     * @Route("/user/", name="home")
      * @Method("GET")
      */
     public function homeAction()
@@ -53,20 +53,32 @@ class UserController extends Controller
     /**
      * Creates a new User entity.
      *
-     * @Route("/", name="user_create")
+     * @Route("/user/", name="user_create")
      * @Method("POST")
-     * @Template("RestFullRestFullBundle:User:new.html.twig")
+     * @Template("RestFullRestFullBundle:User: .html.twig")
      */
     public function createAction(Request $request)
     {
+
+        $oEm = $this->getDoctrine()->getManager();
+
+        //var_dump("<PRE>",$request->request);die;
         $entity = new User();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $repo = $oEm->getRepository("RestFullRestFullBundle:User");
+            //$repo->getNumberOfUser();
+            //$u = $oEm->getRepository("RestFullRestFullBundle:User")->findAll();
+            //$r = count($u);
+            //$entity->setId(110);
+            //var_dump("<PRE>",$entity);die;
+
             $em->persist($entity);
-            $em->flush();
+            $em->flush($entity);
+//            var_dump($entity);die;
 
             return $this->redirect($this->generateUrl('user_show', array('id' => $entity->getId())));
         }
@@ -99,31 +111,33 @@ class UserController extends Controller
     /**
      * Displays a form to create a new User entity.
      *
-     * @Route("/new", name="user_new")
+     * @Route("/user/new", name="user_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
+
         $entity = new User();
         $form   = $this->createCreateForm($entity);
 
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            //'formCustom' => $formCustom->createView(),
         );
     }
 
     /**
      * Finds and displays a User entity.
      *
-     * @Route("/{id}", name="user_show")
+     * @Route("/user/{id}/", name="user_show")
+     * @Route("/users/{id}/", name="users_show")
      * @Method("GET")
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
 
         if (!$entity) {
@@ -145,7 +159,7 @@ class UserController extends Controller
     /**
      * Displays a form to edit an existing User entity.
      *
-     * @Route("/{id}/edit", name="user_edit")
+     * @Route("/user/{id}/edit", name="user_edit")
      * @Method("GET")
      * @Template()
      */
@@ -190,7 +204,7 @@ class UserController extends Controller
     /**
      * Edits an existing User entity.
      *
-     * @Route("/{id}", name="user_update")
+     * @Route("/user/{id}", name="user_update")
      * @Method("PUT")
      * @Template("RestFullRestFullBundle:User:edit.html.twig")
      */
@@ -223,7 +237,7 @@ class UserController extends Controller
     /**
      * Deletes a User entity.
      *
-     * @Route("/{id}", name="user_delete")
+     * @Route("/user/{id}", name="user_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
