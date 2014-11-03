@@ -140,18 +140,37 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
 
+
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find User entity.');
+
+            $array = array(
+                'status' => 404,
+                'message' => "not found",);
+            $response = new Response(json_encode($array), 404);
+            $response->headers->set('Content-Type', 'application/json');
+            //throw $this->createNotFoundException('Unable to find User entity.');
+        }
+        else if ($entity->getRole() == "admin") {
+
+            $array = array(
+                'status' => 401,
+                'message' => "Unauthorized access",);
+            $response = new Response(json_encode($array), 401);
+            $response->headers->set('Content-Type', 'application/json');
+
+        }
+        else {
+            $response = new JsonResponse();
+            $response->setData(array(
+                'id' => $entity->getId(),
+                'lastname' => $entity->getLastName(),
+                'firstname' => $entity->getfirstName(),
+                'email' => $entity->getEmail(),
+                'role' => $entity->getRole()
+            ));
+
         }
 
-        $response = new JsonResponse();
-        $response->setData(array(
-            'id' => $entity->getId(),
-            'lastname' => $entity->getLastName(),
-            'firstname' => $entity->getfirstName(),
-            'email' => $entity->getEmail(),
-            'role' => $entity->getRole()
-        ));
 
         return $response;
     }
