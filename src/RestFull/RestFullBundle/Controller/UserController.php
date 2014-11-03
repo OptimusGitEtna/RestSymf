@@ -53,12 +53,13 @@ class UserController extends Controller
     /**
      * Creates a new User entity.
      *
-     * @Route("/", name="user_create")
+     * @Route("/user/", name="user_create")
      * @Method("POST")
      * @Template("RestFullRestFullBundle:User: .html.twig")
      */
     public function createAction(Request $request)
     {
+
         $oEm = $this->getDoctrine()->getManager();
 
         //var_dump("<PRE>",$request->request);die;
@@ -110,7 +111,7 @@ class UserController extends Controller
     /**
      * Displays a form to create a new User entity.
      *
-     * @Route("/new", name="user_new")
+     * @Route("/user/new", name="user_new")
      * @Method("GET")
      * @Template()
      */
@@ -131,12 +132,12 @@ class UserController extends Controller
      * Finds and displays a User entity.
      *
      * @Route("/user/{id}/", name="user_show")
+     * @Route("/users/{id}/", name="users_show")
      * @Method("GET")
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
 
         if (!$entity) {
@@ -158,7 +159,7 @@ class UserController extends Controller
     /**
      * Displays a form to edit an existing User entity.
      *
-     * @Route("/{id}/edit", name="user_edit")
+     * @Route("/user/{id}/edit", name="user_edit")
      * @Method("GET")
      * @Template()
      */
@@ -203,7 +204,7 @@ class UserController extends Controller
     /**
      * Edits an existing User entity.
      *
-     * @Route("/{id}", name="user_update")
+     * @Route("/user/{id}", name="user_update")
      * @Method("PUT")
      * @Template("RestFullRestFullBundle:User:edit.html.twig")
      */
@@ -236,7 +237,7 @@ class UserController extends Controller
     /**
      * Deletes a User entity.
      *
-     * @Route("/{id}", name="user_delete")
+     * @Route("/user/{id}", name="user_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
