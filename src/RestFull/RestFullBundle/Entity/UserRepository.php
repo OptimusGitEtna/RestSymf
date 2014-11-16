@@ -12,4 +12,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+
+    public function getNumberOfUser() {
+
+        $qb = $this->createQueryBuilder('c');
+        $qb->select('COUNT(c)');
+        die($qb->getQuery()->getSingleResult());
+        return $qb->getQuery()->getSingleResult();
+    }
+
+    public function a() {
+        die('coucou');
+    }
+
+    public function insertUser() {
+
+        die('insertion d\'un user');
+    }
 }
