@@ -23,19 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/DefaultController.php">
+      <file leaf-file-name="UserRepository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="38" selection-start="385" selection-end="385" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="345">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="58.125" vertical-offset="1650" max-vertical-offset="3285">
+            <state line="17" column="45" selection-start="348" selection-end="348" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="570">
               <folding />
             </state>
           </provider>
@@ -44,9 +35,51 @@
       <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="33" selection-start="2822" selection-end="2822" vertical-scroll-proportion="1.185965" vertical-offset="1342" max-vertical-offset="3855">
+            <state line="197" column="32" selection-start="5413" selection-end="5413" vertical-scroll-proportion="0.84569734" vertical-offset="2385" max-vertical-offset="5190">
               <folding>
                 <element signature="e#54#99#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.orm.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/config/doctrine/metadata/orm/User.orm.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="23" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="410" selection-end="410" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="3045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_post.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/test_post.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="44" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="300">
+              <folding>
+                <marker date="1416143103000" expanded="true" signature="34:501" placeholder="{% block body ...%}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="16" selection-start="0" selection-end="258" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="315">
+              <folding>
+                <marker date="1414869821000" expanded="true" signature="136:241" placeholder="..." />
+                <marker date="1414869821000" expanded="true" signature="145:235" placeholder="..." />
+                <marker date="1414869821000" expanded="true" signature="183:225" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -62,11 +95,15 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Controller/WelcomeController.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UsersController.php" />
+        <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/test_post.html.twig" />
+        <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php" />
       </list>
@@ -104,7 +141,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -119,7 +155,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RestFull" />
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -129,7 +165,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RestFull" />
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -143,7 +179,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RestFull" />
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -165,7 +201,105 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="RestSymf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFullBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestSymf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFullBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestSymf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFullBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doctrine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metadata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestFull" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -191,7 +325,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RestFull" />
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -217,7 +351,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="RestFull" />
+              <option name="myItemId" value="RestSymf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -227,6 +361,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,7 +370,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BO_Custom" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -263,21 +398,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="844" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="844" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5518617" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908162" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2274678" sideWeight="0.4480712" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2274678" sideWeight="0.5489614" order="-1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38164893" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23891273" sideWeight="0.44946808" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23891273" sideWeight="0.5505319" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908162" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -297,114 +432,183 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/DemoController.php">
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="5" selection-start="574" selection-end="574" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/services.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="724">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/docs/en/reference/php-mapping.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="9" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.71157897" vertical-offset="622" max-vertical-offset="4740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/cache/prod/twig/92/37/0c9a06f33a03cae7c495d5eb5f72f557126e720e93f1897713045363948c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="336" selection-end="336" vertical-scroll-proportion="0.29411766" vertical-offset="0" max-vertical-offset="1005">
-          <folding>
-            <marker date="1413793358000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1413793358000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1413793358000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1413793358000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.22510232" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="5" selection-start="358" selection-end="358" vertical-scroll-proportion="0.3173484" vertical-offset="0" max-vertical-offset="709">
-          <folding>
-            <element signature="e#46#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="33" selection-start="657" selection-end="657" vertical-scroll-proportion="0.2538787" vertical-offset="135" max-vertical-offset="3705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="15" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05952381" vertical-offset="0" max-vertical-offset="756">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="306" selection-end="306" vertical-scroll-proportion="0.21825397" vertical-offset="0" max-vertical-offset="756">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/console">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="71" selection-start="657" selection-end="675" vertical-scroll-proportion="0.32786885" vertical-offset="0" max-vertical-offset="732">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="17" selection-start="581" selection-end="581" vertical-scroll-proportion="0.32234958" vertical-offset="90" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="58.125" vertical-offset="1650" max-vertical-offset="3285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="38" selection-start="385" selection-end="385" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="345">
+        <state line="17" column="23" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="33" selection-start="2822" selection-end="2822" vertical-scroll-proportion="1.185965" vertical-offset="1342" max-vertical-offset="3855">
+        <state line="57" column="47" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="4560">
+          <folding>
+            <element signature="e#54#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="92" selection-end="96" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="315">
+          <folding>
+            <marker date="1414869821000" expanded="true" signature="136:241" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="145:235" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="183:225" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="24" selection-start="2062" selection-end="2062" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="4260">
+          <folding>
+            <element signature="e#54#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="315">
+          <folding>
+            <marker date="1414869821000" expanded="true" signature="136:241" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="145:235" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="183:225" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="38" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="3285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="33" selection-start="2856" selection-end="2856" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="4065">
+          <folding>
+            <element signature="e#54#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/DemoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5" selection-start="574" selection-end="574" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="825" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/services.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="724" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.22510232" vertical-offset="0" max-vertical-offset="733" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/WelcomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="5" selection-start="358" selection-end="358" vertical-scroll-proportion="0.3173484" vertical-offset="0" max-vertical-offset="709" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="33" selection-start="657" selection-end="657" vertical-scroll-proportion="0.2538787" vertical-offset="135" max-vertical-offset="3705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="15" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05952381" vertical-offset="0" max-vertical-offset="756" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/DemoBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="306" selection-end="306" vertical-scroll-proportion="0.21825397" vertical-offset="0" max-vertical-offset="756" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/console">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="71" selection-start="657" selection-end="675" vertical-scroll-proportion="0.32786885" vertical-offset="0" max-vertical-offset="732" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="38" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="394" selection-end="394" vertical-scroll-proportion="0.29005525" vertical-offset="0" max-vertical-offset="724" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="35" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.3580599" vertical-offset="469" max-vertical-offset="1170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="494" selection-end="494" vertical-scroll-proportion="0.34285715" vertical-offset="0" max-vertical-offset="705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/test_post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="44" selection-start="96" selection-end="96" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <marker date="1416143103000" expanded="true" signature="34:501" placeholder="{% block body ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/views/User/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="0" selection-end="258" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="315">
+          <folding>
+            <marker date="1414869821000" expanded="true" signature="136:241" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="145:235" placeholder="..." />
+            <marker date="1414869821000" expanded="true" signature="183:225" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Resources/config/doctrine/metadata/orm/User.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="23" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="410" selection-end="410" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="3045">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Entity/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="45" selection-start="348" selection-end="348" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestFull/RestFullBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="32" selection-start="5413" selection-end="5413" vertical-scroll-proportion="0.84569734" vertical-offset="2385" max-vertical-offset="5190">
           <folding>
             <element signature="e#54#99#0" expanded="true" />
           </folding>

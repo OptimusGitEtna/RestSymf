@@ -42,13 +42,51 @@ class UserController extends Controller
      * return a status 200.
      *
      * @Route("/user/", name="home")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
+     * @Template("RestFullRestFullBundle:User:index.html.twig")
      */
-    public function homeAction()
+    public function homeAction(Request $oRequest)
     {
-        $response = new Response('Content home', 200, array('content-type' => 'text/html'));
+
+        $em = $this->getDoctrine()->getManager();
+
+        if ($oRequest->isMethod('post')) {
+
+            $aUsers = $this->getDoctrine()->getManager()
+                ->getRepository("RestFullRestFullBundle:User")
+                ->findAll();
+
+            $aNbUsers = count($aUsers);
+            $oUser = new User();
+            $oUser->setId($aNbUsers+1);
+            $oUser->setlastname($oRequest->request->get('lastname'));
+            $oUser->setFirstname($oRequest->request->get('lastname'));
+            $oUser->setEmail($oRequest->request->get('email'));
+            $oUser->setRole($oRequest->request->get('password'));
+            $oUser->setPassword($oRequest->request->get('role'));
+
+            $em->persist($oUser);
+            $em->flush();
+        };
+
+        $response = new Response('Content', 200, array('content-type' => 'text/html'));
         return $response;
     }
+
+    /**
+     * affiche le formulaire test pour envoi de post
+     *
+     * @Route("/user/post", name="post_test")
+     * @Method("GET")
+     */
+    public function testPostAction()
+    {
+
+        //die('methode post');
+        return $this->render("RestFullRestFullBundle:User:test_post.html.twig");
+    }
+
+
 
     /**
      * Creates a new User entity.
@@ -70,6 +108,7 @@ class UserController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $repo = $oEm->getRepository("RestFullRestFullBundle:User");
+
             //$repo->getNumberOfUser();
             //$u = $oEm->getRepository("RestFullRestFullBundle:User")->findAll();
             //$r = count($u);
@@ -78,8 +117,6 @@ class UserController extends Controller
 
             $em->persist($entity);
             $em->flush($entity);
-//            var_dump($entity);die;
-
             return $this->redirect($this->generateUrl('user_show', array('id' => $entity->getId())));
         }
 

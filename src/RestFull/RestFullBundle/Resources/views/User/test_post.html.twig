@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+   <form method="post" action="{{ path('home') }}">
+       <input type="text" name="fistname" placeholder="firstname"/>
+       <input type="text" name="lastname" placeholder="lastname"/>
+       <input type="text" name="email" placeholder="email"/>
+       <input type="text" name="password" placeholder="password"/>
+       <input type="text" name="role" placeholder="role"/>
+
+       <input type="submit" name="valid-btn" />
+
+   </form>
+{% endblock %}

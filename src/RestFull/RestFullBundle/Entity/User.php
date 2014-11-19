@@ -7,60 +7,67 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="mail", columns={"email"})})
  * @ORM\Entity(repositoryClass="RestFull\RestFullBundle\Entity\UserRepository")
  */
 class User
 {
-
-    const ROLE_NORMAL = 'normal';
-    const ROLE_ADMIN = 'admin';
-
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=100)
+     * @ORM\Column(name="lastname", type="string", length=100, nullable=false)
      */
     private $lastname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=100)
+     * @ORM\Column(name="firstname", type="string", length=100, nullable=false)
      */
     private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=100)
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
      */
     private $email;
-
 
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=40)
+     * @ORM\Column(name="password", type="string", length=40, nullable=false)
      */
     private $password;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="role", type="string", columnDefinition="ENUM('normal', 'admin')")
+     * @ORM\Column(name="role", type="string", nullable=false)
      */
     private $role;
 
+
+    /**
+     * Set id
+     *
+     * @param string $lastname
+     * @return User
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
 
     /**
@@ -165,20 +172,6 @@ class User
         return $this->password;
     }
 
-/*    /**
-     * Set role
-     *
-     * @param string $role
-     * @return User
-     */
-/*    public function setRole($role)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-*/
-
     /**
      * Set role
      *
@@ -187,19 +180,10 @@ class User
      */
     public function setRole($role)
     {
-        /*
         $this->role = $role;
 
         return $this;
-        */
-
-
-        if (!in_array($role, array(self::ROLE_NORMAL, self::ROLE_ADMIN))) {
-            throw new \InvalidArgumentException("Invalid role");
-        }
-        $this->role = $role;
     }
-
 
     /**
      * Get role
