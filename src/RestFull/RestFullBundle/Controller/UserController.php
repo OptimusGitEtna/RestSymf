@@ -62,8 +62,8 @@ class UserController extends Controller
             $oUser->setlastname($oRequest->request->get('lastname'));
             $oUser->setFirstname($oRequest->request->get('lastname'));
             $oUser->setEmail($oRequest->request->get('email'));
-            $oUser->setRole($oRequest->request->get('password'));
-            $oUser->setPassword($oRequest->request->get('role'));
+            $oUser->setRole($oRequest->request->get('role'));
+            $oUser->setPassword($oRequest->request->get('password'));
 
             $em->persist($oUser);
             $em->flush();
@@ -85,8 +85,6 @@ class UserController extends Controller
         //die('methode post');
         return $this->render("RestFullRestFullBundle:User:test_post.html.twig");
     }
-
-
 
     /**
      * Creates a new User entity.
