@@ -11,5 +11,5 @@
        <input type="submit" name="valid-btn" />
    </form>
 
-    {{ form(form_update) }}
+
 {% endblock %}

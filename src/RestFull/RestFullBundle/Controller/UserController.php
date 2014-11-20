@@ -25,6 +25,7 @@ class UserController extends Controller
      * Lists all User entities.
      *
      * @Route("/user/list", name="user")
+     * @Route("/users/list", name="users_list")
      * @Method("GET")
      * @Template()
      */
@@ -40,15 +41,15 @@ class UserController extends Controller
 
     /**
      * return a status 200.
-     *
      * @Route("/user/", name="home")
+     * @Route("/users/", name="home")
      * @Method({"GET", "POST"})
      * @Template("RestFullRestFullBundle:User:index.html.twig")
      */
     public function homeAction(Request $oRequest)
     {
 
-        $em = $this->getDoctrine()->getManager();
+        $oEm = $this->getDoctrine()->getManager();
 
         if ($oRequest->isMethod('post')) {
 
@@ -76,14 +77,20 @@ class UserController extends Controller
     /**
      * affiche le formulaire test pour envoi de post
      *
-     * @Route("/user/post", name="post_test")
-     * @Method("GET")
+     * @Route("/user/form/{iIdUser}", name="post_test")
+     * @Route("/users/form/{iIdUser}", name="post_test")
+     * @Method({"GET", "PUT"})
      */
-    public function testPostAction()
+    public function testPostAction($iIdUser)
     {
 
-        //die('methode post');
-        return $this->render("RestFullRestFullBundle:User:test_post.html.twig");
+
+        $form = $this->createDeleteForm($iIdUser);
+        return $this->render("RestFullRestFullBundle:User:test_post.html.twig", array(
+
+            'sTypeAction' => "post",
+            'form_update' => $form->createView(),
+            ));
     }
 
     /**
@@ -259,6 +266,7 @@ class UserController extends Controller
      * Edits an existing User entity.
      *
      * @Route("/user/{id}", name="user_update")
+     * @Route("/users/{id}", name="user_update")
      * @Method("PUT")
      * @Template("RestFullRestFullBundle:User:edit.html.twig")
      */
@@ -279,7 +287,7 @@ class UserController extends Controller
         if ($editForm->isValid()) {
 
             $em->flush();
-            return $this->redirect($this->generateUrl('user_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('home', array('id' => $id)));
         }
 
         return array(
@@ -292,6 +300,7 @@ class UserController extends Controller
      * Deletes a User entity.
      *
      * @Route("/user/{id}", name="user_delete")
+     * @Route("/users/{id}", name="user_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
