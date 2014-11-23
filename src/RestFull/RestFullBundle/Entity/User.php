@@ -56,7 +56,7 @@ class User
     private $role;
 
 
-    /**
+   /**
      * Set id
      *
      * @param string $lastname
@@ -103,7 +103,7 @@ class User
         return $this->lastname;
     }
 
-    /**
+   /**
      * Set firstname
      *
      * @param string $firstname
@@ -116,7 +116,7 @@ class User
         return $this;
     }
 
-    /**
+   /**
      * Get firstname
      *
      * @return string 
@@ -180,8 +180,8 @@ class User
      */
     public function setRole($role)
     {
+        
         $this->role = $role;
-
         return $this;
     }
 

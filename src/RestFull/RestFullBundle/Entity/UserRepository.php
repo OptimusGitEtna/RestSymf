@@ -21,12 +21,42 @@ class UserRepository extends EntityRepository
         return $qb->getQuery()->getSingleResult();
     }
 
-    public function a() {
-        die('coucou');
+    public function getLastUserId()
+    {
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('max(u.id)');
+        
+        return $qb->getQuery()->getSingleResult();
+    }
+    
+    public function getUserByAttrib($aUserData) 
+    {
+        $attrib = "lastname";
+        $qb = $this->createQueryBuilder('u');
+        
+        foreach ($aUserData as $sKey => $sUserAttrib)
+        {
+            if ("password" != $sKey) 
+            {
+                $qb->andWhere("u.".$sKey." = :attrib");
+                $qb->setParameter("attrib", $sUserAttrib);
+            }
+            
+        }
+        
+        //var_dump("<PRE>",$qb->getQuery()->getResult());die;
+        
+        /*
+        $qb->andWhere("u.".$attrib." = :attrib");
+        $qb->setParameter("attrib", "tutu");
+                */
+                
+                
+        
+        
+        
+        return $qb->getQuery()->getSingleResult();
     }
 
-    public function insertUser() {
-
-        die('insertion d\'un user');
-    }
+    
 }
