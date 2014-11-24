@@ -31,7 +31,7 @@ class UserController extends Controller
      */
     public function homeAction(Request $oRequest)
     {
-
+        
         $oEm = $this->getDoctrine()->getManager();
         $oUserRepository = $this->getDoctrine()->getManager()->getRepository("RestFullRestFullBundle:User");
         $aUserFromJson  = json_decode($oRequest->getContent(), true);
@@ -39,7 +39,6 @@ class UserController extends Controller
         $response = new Response('Content', 200, array('content-type' => 'text/html'));
         
         if ($oRequest->isMethod('post')) {
-          
             // Recuperation du dernier id de la base.
             $aLastUserId = $oUserRepository->getLastUserId();
             $iLastUserId = (int) $aLastUserId[1];
@@ -51,8 +50,11 @@ class UserController extends Controller
             $oUser ->setEmail($aUserFromJson['email']);
             $oUser ->setRole($aUserFromJson['role']);
             $oUser ->setPassword($aUserFromJson['password']);
-            
+
             $bUserExists = $this->isUserMailExist($oUser->getEmail());
+            $bDataUserConform = $this->dataUserIsConformToCreate($oUser);
+            $bCheckParam = $this->checkParams($aUserFromJson);
+            
             if (true == $bUserExists) 
             {
                 $array = array(
@@ -64,10 +66,33 @@ class UserController extends Controller
                 
                 return $response;
             }
+            if (false == $bDataUserConform)
+            {
+                $array = array(
+                   'status' => 403,
+                   'message' => "Parameters missing for create user");
+                
+                $response = new Response(json_encode($array), 403);
+                $response->headers->set('Content-Type', 'application/json');
+                
+                return $response;
+            }
             
+            if (false == $bCheckParam)
+            {
+                $array = array(
+                   'status' => 403,
+                   'message' => "Parameters wrong");
+                
+                $response = new Response(json_encode($array), 403);
+                $response->headers->set('Content-Type', 'application/json');
+                
+                return $response;
+            }
+                
             $oEm->persist($oUser);
             $oEm->flush($oUser);
-            
+
             $array = array(
                'status' => 201,
                'message' => "User created");
@@ -79,6 +104,49 @@ class UserController extends Controller
         return $response;
     }
     
+    
+    private function checkParams($aUserFromJson)
+    {
+        $aRightIndex = ['lastname', 'firstname', 'email', 'role', 'password'];
+        foreach ($aUserFromJson as $sKey => $sData) 
+        {
+            if (!in_array($sKey, $aRightIndex))
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+     private function dataUserIsConformToCreate($oUser)
+    {
+        $oEm = $this->getDoctrine()->getManager();
+        $bDataisConform = true;
+        
+        if (null == $oUser->getLastName()) 
+        {   
+            $bDataisConform = false;
+        }
+        if (null == $oUser->getFirstname()) 
+        {
+            $bDataisConform = false;
+        }
+        if (null == $oUser->getEmail()) 
+        {
+            $bDataisConform = false;
+        }
+        if (null == $oUser->getPassword()) 
+        {
+            $bDataisConform = false;
+        }
+        if (null == $oUser->getRole()) 
+        {
+            $bDataisConform = false;
+        }
+
+        return $bDataisConform;
+    }
     
     private function isUserMailExist($sUserMail)
     {
@@ -104,12 +172,25 @@ class UserController extends Controller
      * @Route("/users/{id}", name="users_show_bis")
      * @Route("/user/{id}/", name="user_show")
      * @Route("/users/{id}/", name="users_show")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
-    public function showAction($id)
+    public function showAction(Request $oRequest,$id)
     {
+         if ($oRequest->isMethod('post'))
+        {
+            $array = array(
+                'status' => 405,
+                'message' => "Post no authorised",);
+            $response = new Response(json_encode($array), 405);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+        }
+        
+        
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
+        
+       
 
         if (!$entity) {
 
@@ -132,6 +213,7 @@ class UserController extends Controller
             $response->setData(array(
                 'id' => $entity->getId(),
                 'lastname' => $entity->getLastName(),
+                'password' => $entity->getPassword(),
                 'firstname' => $entity->getfirstName(),
                 'email' => $entity->getEmail(),
                 'role' => $entity->getRole()
@@ -144,14 +226,13 @@ class UserController extends Controller
     /**
      * Edits an existing User entity.
      *
-     * @Route("/user/{id}", name="user_update_bis")
-     * @Route("/users/{id}", name="users_update_bis")
      * @Route("/user/{id}/", name="user_update")
-     * @Route("/users/{id}/", name="users_update")
+     * @Route("/users/{id}", name="users_update")
      * @Method("PUT")
      */
     public function updateAction(Request $request, $id)
     {
+       
         $em = $this->getDoctrine()->getManager();
         $oUserRepository = $this->getDoctrine()->getManager()
                 ->getRepository("RestFullRestFullBundle:User");
@@ -159,7 +240,8 @@ class UserController extends Controller
         $aUserFromJson  = json_decode($request->getContent(), true);
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
         
-        if (!$entity) {
+        if (!$entity) 
+        {
             
             $array = array(
                'status' => 404,
@@ -170,25 +252,31 @@ class UserController extends Controller
             return $response;
         }
         
+        if (true == $this->isUserMailExist($aUserFromJson['email'])) 
+        {
+            $array = array(
+               'status' => 401,
+               'message' => "User email already exists in database");
+
+            $response = new Response(json_encode($array), 401);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+        }
+        
         $this->updateUserAboutJsonStream($entity, $aUserFromJson);
+        
         $array = array(
-               'status' => 202,
+               'status' => 200,
                'message' => "User updated");
         
-        $response = new Response(json_encode($array), 202);
+        $response = new Response(json_encode($array), 200);
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
     
     private function updateUserAboutJsonStream($entity, $aUserFromJson) 
     {
-        /*foreach ($aUserFromJson as $sIndexAttrib => $sValueAttrib)
-                {
-                    $attrib = ucfirst( $sIndexAttrib );
-
-                    $methode = "set".$attrib."('$sValueAttrib')";
-                    //$entity->set."$attrib".($sValueAttrib);
-                }*/
+             
         foreach ($aUserFromJson as $sIndexAttrib => $sValueAttrib)
         {
             if ("firstname" == $sIndexAttrib) 
@@ -248,10 +336,10 @@ class UserController extends Controller
         $em->flush();
         
         $array = array(
-               'status' => 202,
+               'status' => 200,
                'message' => "User deleted");
         
-        $response = new Response(json_encode($array), 202);
+        $response = new Response(json_encode($array), 200);
         $response->headers->set('Content-Type', 'application/json');
         return $response;
     }

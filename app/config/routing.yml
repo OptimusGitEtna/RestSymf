@@ -2,10 +2,3 @@ rest_full_rest_full:
     resource: "@RestFullRestFullBundle/Controller/"
     type:     annotation
     prefix:   /
-
-root:
-    pattern: /
-    defaults:
-        _controller: RestFullRestFullBundle:User:home
-        path: /
-        permanent: true
