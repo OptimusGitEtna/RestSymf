@@ -23,6 +23,7 @@ class UserRepository extends EntityRepository
 
     public function getLastUserId()
     {
+
         $qb = $this->createQueryBuilder('u');
         $qb->select('max(u.id)');
         

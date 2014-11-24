@@ -35,7 +35,7 @@ class UserController extends Controller
         $oEm = $this->getDoctrine()->getManager();
         $oUserRepository = $this->getDoctrine()->getManager()->getRepository("RestFullRestFullBundle:User");
         $aUserFromJson  = json_decode($oRequest->getContent(), true);
-        
+
         $response = new Response('Content', 200, array('content-type' => 'text/html'));
         
         if ($oRequest->isMethod('post')) {
@@ -49,7 +49,6 @@ class UserController extends Controller
             $oUser ->setLastname($aUserFromJson['lastname']);
             $oUser ->setFirstname($aUserFromJson['firstname']);
             $oUser ->setEmail($aUserFromJson['email']);
-    
             $oUser ->setRole($aUserFromJson['role']);
             $oUser ->setPassword($aUserFromJson['password']);
             
@@ -172,7 +171,6 @@ class UserController extends Controller
         }
         
         $this->updateUserAboutJsonStream($entity, $aUserFromJson);
-        
         $array = array(
                'status' => 202,
                'message' => "User updated");
@@ -231,23 +229,19 @@ class UserController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        //die('methode delete');die;
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
         
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find User entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
+        
+        if (!$entity) {
+            
+            $array = array(
+               'status' => 404,
+               'message' => "User not found");
+            $response = new Response(json_encode($array), 404);
+            $response->headers->set('Content-Type', 'application/json');
+            
+            return $response;
         }
         
         $em->remove($entity);
