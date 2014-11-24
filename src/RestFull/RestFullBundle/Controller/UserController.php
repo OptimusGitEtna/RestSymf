@@ -42,17 +42,16 @@ class UserController extends Controller
     /**
      * return a status 200.
      * @Route("/user/", name="home")
-     * @Route("/users/", name="home")
+     * @Route("/users/", name="homes")
      * @Method({"GET", "POST"})
      * @Template("RestFullRestFullBundle:User:index.html.twig")
      */
     public function homeAction(Request $oRequest)
     {
-
+	
         $oEm = $this->getDoctrine()->getManager();
-
+	var_dump(json_decode($oRequest->getContent(), true));
         if ($oRequest->isMethod('post')) {
-
             $aUsers = $this->getDoctrine()->getManager()
                 ->getRepository("RestFullRestFullBundle:User")
                 ->findAll();
@@ -68,6 +67,8 @@ class UserController extends Controller
 
             $em->persist($oUser);
             $em->flush();
+	   
+	    $this->getResponse()->setStatusCode('024');
         };
 
         $response = new Response('Content', 200, array('content-type' => 'text/html'));
