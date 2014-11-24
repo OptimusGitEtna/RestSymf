@@ -41,22 +41,8 @@ class UserRepository extends EntityRepository
                 $qb->andWhere("u.".$sKey." = :attrib");
                 $qb->setParameter("attrib", $sUserAttrib);
             }
-            
         }
-        
-        //var_dump("<PRE>",$qb->getQuery()->getResult());die;
-        
-        /*
-        $qb->andWhere("u.".$attrib." = :attrib");
-        $qb->setParameter("attrib", "tutu");
-                */
-                
-                
-        
-        
         
         return $qb->getQuery()->getSingleResult();
     }
-
-    
 }

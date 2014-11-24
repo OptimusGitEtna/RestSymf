@@ -5,7 +5,12 @@
         <group>
             <file>file:/var/www/RestFull/RestSymf/src/RestFull/RestFullBundle/Controller/UserController.php</file>
             <file>file:/var/www/RestFull/RestSymf/src/RestFull/RestFullBundle/Entity/UserRepository.php</file>
+            <file>file:/var/www/RestFull/RestSymf/src/RestFull/RestFullBundle/Tests/Controller/UserControllerTest.php</file>
+            <file>file:/var/www/RestFull/RestSymf/src/Acme/DemoBundle/Tests/Controller/DemoControllerTest.php</file>
+            <file>file:/var/www/RestFull/RestSymf/app/phpunit.xml.dist</file>
+            <file>file:/var/www/RestFull/RestSymf/app/console</file>
             <file>file:/var/www/RestFull/RestSymf/src/RestFull/RestFullBundle/Entity/User.php</file>
+            <file>file:/var/www/RestFull/RestSymf/Python-3.4.2/Grammar/Grammar</file>
         </group>
     </open-files>
 </project-private>
