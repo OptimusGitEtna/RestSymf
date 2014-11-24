@@ -257,7 +257,7 @@ class UserController extends Controller
             return $response;
         }
         
-        if (true == $this->isUserMailExist($aUserFromJson['email'])) 
+        if (isset($aUserFromJson['email']) && true == $this->isUserMailExist($aUserFromJson['email'])) 
         {
             $array = array(
                'status' => 401,
