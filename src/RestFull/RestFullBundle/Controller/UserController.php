@@ -45,11 +45,16 @@ class UserController extends Controller
             
             $oUser = new User();
             $oUser->setId($iLastUserId+1);
-            $oUser ->setLastname($aUserFromJson['lastname']);
-            $oUser ->setFirstname($aUserFromJson['firstname']);
-            $oUser ->setEmail($aUserFromJson['email']);
-            $oUser ->setRole($aUserFromJson['role']);
-            $oUser ->setPassword($aUserFromJson['password']);
+            if (isset($aUserFromJson['lastname'])) 
+                $oUser ->setLastname($aUserFromJson['lastname']);
+            if (isset($aUserFromJson['firstname'])) 
+                $oUser ->setFirstname($aUserFromJson['firstname']);
+            if (isset($aUserFromJson['email'])) 
+                $oUser ->setEmail($aUserFromJson['email']);
+            if (isset($aUserFromJson['role'])) 
+                $oUser ->setRole($aUserFromJson['role']);
+            if (isset($aUserFromJson['password'])) 
+                $oUser ->setPassword($aUserFromJson['password']);
 
             $bUserExists = $this->isUserMailExist($oUser->getEmail());
             $bDataUserConform = $this->dataUserIsConformToCreate($oUser);
