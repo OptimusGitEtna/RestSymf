@@ -231,8 +231,10 @@ class UserController extends Controller
     /**
      * Edits an existing User entity.
      *
+     * @Route("/user/{id}", name="user_update_b")
+     * @Route("/users/{id}", name="users_update_b")
      * @Route("/user/{id}/", name="user_update")
-     * @Route("/users/{id}", name="users_update")
+     * @Route("/users/{id}/", name="users_update")
      * @Method("PUT")
      */
     public function updateAction(Request $request, $id)
@@ -256,7 +258,7 @@ class UserController extends Controller
             
             return $response;
         }
-        
+        die('marche pas');
         if (isset($aUserFromJson['email']) && true == $this->isUserMailExist($aUserFromJson['email'])) 
         {
             $array = array(
