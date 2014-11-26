@@ -263,41 +263,108 @@ class UserController extends Controller
 
         return $form;
     }
-    /**
+
+
+
+
+
+     /**
      * Edits an existing User entity.
      *
-     * @Route("/user/{id}", name="user_update")
-     * @Route("/users/{id}", name="user_update")
+     * @Route("/user/{id}/", name="user_update")
+     * @Route("/users/{id}/", name="user_update")
      * @Method("PUT")
      * @Template("RestFullRestFullBundle:User:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $oUserRepository = $this->getDoctrine()->getManager()->getRepository("RestFullRestFullBundle:User");
 
+        $aUserFromJson  = json_decode($request->getContent(), true);
+        //var_dump("<PRE>",$aUserFromJson);die;
+        
+        // verification et bind des donnees utilisateur du flux json avec celui de la bdd.
+        //var_dump($aUserFromJson);die;
+        
+        //$oUserRepository->getUserByAttrib($aUserFromJson);
+        
         $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
-
+        
+        
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find User entity.');
         }
+        
+        $this->updateUserAboutJsonStream($entity, $aUserFromJson);
+        /*
+                $deleteForm = $this->createDeleteForm($id);
+                $editForm = $this->createEditForm($entity);
+                $editForm->handleRequest($request);
 
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
+                if ($editForm->isValid()) {
 
-        if ($editForm->isValid()) {
+                    $em->flush();
+                    return $this->redirect($this->generateUrl('home', array('id' => $id)));
+                }
 
-            $em->flush();
-            return $this->redirect($this->generateUrl('home', array('id' => $id)));
-        }
-
-        return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+                return array(
+                    'entity'      => $entity,
+                    'edit_form'   => $editForm->createView(),
+                    'delete_form' => $deleteForm->createView(),
+                );*/
+        
     }
-    /**
+    
+    private function updateUserAboutJsonStream($entity, $aUserFromJson) 
+    {
+        //var_dump("<PRE>",$entity, $aUserFromJson);die;
+       // var_dump($entity);
+        /*foreach ($aUserFromJson as $sIndexAttrib => $sValueAttrib)
+        {
+            $attrib = ucfirst( $sIndexAttrib );
+            
+            $methode = "set".$attrib."('$sValueAttrib')";
+            //var_dump($methode);die;
+            var_dump($entity->$methode);die;
+            //$entity->set."$attrib".($sValueAttrib);
+        }*/
+        foreach ($aUserFromJson as $sIndexAttrib => $sValueAttrib)
+        {
+            if ("firstname" == $sIndexAttrib) 
+            {
+                //die('firstname ok');
+                $entity->setFirstName($sValueAttrib);
+            }
+            if ("lastname" == $sIndexAttrib) 
+            {
+                //die('lastname ok');
+                $entity->setLastName($sValueAttrib);
+            }
+            if ("email" == $sIndexAttrib) 
+            {
+                //die('lastname ok');
+                $entity->setEmail($sValueAttrib);
+            }
+            if ("role" == $sIndexAttrib) 
+            {
+                //die('role ok');
+                $entity->setRole($sValueAttrib);
+            }
+            if ("password" == $sIndexAttrib) 
+            {
+                //die('password ok');
+                $entity->setPassword($sValueAttrib);
+            }
+        }
+        
+        $oEm = $this->getDoctrine()->getManager();
+        
+        $oEm->persist($entity);
+        $oEm->flush();die;        
+    }
+
+     /**
      * Deletes a User entity.
      *
      * @Route("/user/{id}", name="user_delete")
@@ -306,38 +373,12 @@ class UserController extends Controller
      */
     public function deleteAction(Request $request, $id)
     {
-        $form = $this->createDeleteForm($id);
-        $form->handleRequest($request);
+	
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('RestFullRestFullBundle:User')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find User entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('user'));
-    }
-
-    /**
-     * Creates a form to delete a User entity by id.
-     *
-     * @param mixed $id The entity id
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('user_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+        $em->remove($entity);
+        $em->flush();
+        die('done');
     }
 }
